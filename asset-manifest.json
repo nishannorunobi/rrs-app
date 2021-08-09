@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/rrs-app/static/css/main.d87cbb72.chunk.css",
+    "main.js": "/rrs-app/static/js/main.2a874092.chunk.js",
+    "main.js.map": "/rrs-app/static/js/main.2a874092.chunk.js.map",
+    "runtime-main.js": "/rrs-app/static/js/runtime-main.1d7141ad.js",
+    "runtime-main.js.map": "/rrs-app/static/js/runtime-main.1d7141ad.js.map",
+    "static/js/2.aa4d2d45.chunk.js": "/rrs-app/static/js/2.aa4d2d45.chunk.js",
+    "static/js/2.aa4d2d45.chunk.js.map": "/rrs-app/static/js/2.aa4d2d45.chunk.js.map",
+    "index.html": "/rrs-app/index.html",
+    "static/css/main.d87cbb72.chunk.css.map": "/rrs-app/static/css/main.d87cbb72.chunk.css.map",
+    "static/js/2.aa4d2d45.chunk.js.LICENSE.txt": "/rrs-app/static/js/2.aa4d2d45.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1d7141ad.js",
+    "static/js/2.aa4d2d45.chunk.js",
+    "static/css/main.d87cbb72.chunk.css",
+    "static/js/main.2a874092.chunk.js"
+  ]
+}
