@@ -1,7 +1,27 @@
 import React from 'react';
 import {Bar} from 'react-chartjs-2'
+import axios from 'axios'
 
 const BarChart = () => {
+
+  const URL = "http://3c558baeae44.ngrok.io/";
+
+  const [post, setPost] = React.useState(null);
+  const [error, setError] = React.useState(null);
+
+  React.useEffect(() => {
+    // invalid url will trigger an 404 error
+    axios.get(URL).then((response) => {
+      setPost(response.data);
+      console.log(response.data);
+    }).catch(error => {
+      setError(error);
+    });
+  }, []);
+  
+  if (error) return `Error: ${error.message}`;
+  if (!post) return "No post!"
+
   return (
       <div>
         <Bar
@@ -10,7 +30,7 @@ const BarChart = () => {
             datasets : [
               {
                 label : '# No of votes',
-                data : [12, 19, 3, 5, 2, 3],
+                data : post.freq,
                 backgroundColor : ['red']
               }
             ]
