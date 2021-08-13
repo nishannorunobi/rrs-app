@@ -1,8 +1,0 @@
-node_modules
-.dockerignore
-Dockerfile
-build
-.git
-.gitignore
-*.md
-
