@@ -37,32 +37,61 @@ export default class Button extends Component {
 
   render() {
     const dataHorBar = {
-      labels: ['0-9', '10-19', '20-29', '30-39', '40-49', '50-59', '60-69','70-79','80-89','90-99'],
+      labels: ['Resume-1', 'Resume-2', 'Resume-3','Resume-4', 'Resume-5'],
       datasets: [
         {
-          label: 'My First dataset',
+          label: 'Overall Rank',
           backgroundColor: '#EC932F',
           borderColor: 'rgba(255,99,132,1)',
           borderWidth: 1,
           hoverBackgroundColor: 'rgba(255,99,132,0.4)',
           hoverBorderColor: 'rgba(255,99,132,1)',
-          data: this.state.items
+          data: [.35,.50,.20,.52,.90]
         },
         {
-          label: 'My First dataset 2',
+          label: 'Similarity Score',
           backgroundColor: 'rgba(255,99,132,0.2)',
           borderColor: 'rgba(255,99,132,1)',
           borderWidth: 1,
           hoverBackgroundColor: 'rgba(255,99,132,0.4)',
           hoverBorderColor: 'rgba(255,99,132,1)',
-          data: [65, 59, 80, 81, 56, 55, 40]
+          data: [.93,.20,.50,.35,.75]
+        },
+        {
+          label: 'Years of experience',
+          backgroundColor: 'rgba(99,255,132,0.2)',
+          borderColor: 'rgba(99,255,132,1)',
+          borderWidth: 1,
+          hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+          hoverBorderColor: 'rgba(255,99,132,1)',
+          data: [.93,.20,.50,.35,.75]
+        },
+        {
+          label: 'University Ranking',
+          backgroundColor: 'rgba(99,255,132,0.2)',
+          borderColor: 'rgba(99,255,132,1)',
+          borderWidth: 1,
+          hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+          hoverBorderColor: 'rgba(255,99,132,1)',
+          data: [.93,.20,.50,.35,.75]
         }
       ]
     };
     return (
       <div>
-        <h2>Horizontal Bar Example</h2>
-        <HorizontalBar data={dataHorBar} />
+        <h2>Resume Ranking System</h2>
+        <HorizontalBar 
+        data={dataHorBar} 
+        options = {{
+          scales: {
+            xAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }}
+        />
       </div>
     );
 
