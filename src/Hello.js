@@ -8,41 +8,94 @@ export default class Button extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      rror: null,
+      error: null,
       isLoaded: false,
-      items: [],
+      doc_names : ['Resume-1', 'Resume-2', 'Resume-3','Resume-4', 'Resume-5'],
       overall_rank : [.35,.50,.20,.52,.90],
       similarity_score : [.90,.52,.35,.20,.70],
       years_of_experience : [.05,.10,.95,.62,.81],
-      hovering_color : 'rgba(0,0,0,1)'
+      hovering_color : 'rgba(0,0,0,1)',
+      base_url : "https://bab05e664b9e.ngrok.io/"
     };
   }
 
   componentDidMount() {
-    fetch("http://3968eb9a432d.ngrok.io/")
-      .then(res => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            isLoaded: true,
-            items: result.freq
-          });
-        },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }
-      )
+    fetch(this.state.base_url + "resume-names")
+    .then(res => res.json())
+    .then(
+      (result) => {
+        this.setState({
+          isLoaded: true,
+          doc_names: result
+        });
+      },
+
+      (error) => {
+        this.setState({
+          isLoaded: true,
+          error
+        });
+      }
+    )
+
+    fetch(this.state.base_url + "overall-ranks")
+    .then(res => res.json())
+    .then(
+      (result) => {
+        this.setState({
+          isLoaded: true,
+          overall_rank: result
+        });
+      },
+
+      (error) => {
+        this.setState({
+          isLoaded: true,
+          error
+        });
+      }
+    )
+
+    fetch(this.state.base_url + "experience-ranks")
+    .then(res => res.json())
+    .then(
+      (result) => {
+        this.setState({
+          isLoaded: true,
+          years_of_experience: result
+        });
+      },
+
+      (error) => {
+        this.setState({
+          isLoaded: true,
+          error
+        });
+      }
+    )
+
+    fetch(this.state.base_url + "requirement-matching-scores")
+    .then(res => res.json())
+    .then(
+      (result) => {
+        this.setState({
+          isLoaded: true,
+          similarity_score: result
+        });
+      },
+
+      (error) => {
+        this.setState({
+          isLoaded: true,
+          error
+        });
+      }
+    )
   }
 
   render() {
     const dataHorBar = {
-      labels: ['Resume-1', 'Resume-2', 'Resume-3','Resume-4', 'Resume-5'],
+      labels: this.state.doc_names,
       datasets: [
         {
           label: 'Overall Rank',
