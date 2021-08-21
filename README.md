@@ -1,3 +1,8 @@
+# Deploying Heroku
+Create new app
+Copy build back URL : https://github.com/mars/create-react-app-buildpack
+Paste to Settings >> add buildpack
+move to Deploy >> Enable Auto deploy & add github branch & deploy
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
