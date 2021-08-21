@@ -15,12 +15,12 @@ export default class Button extends Component {
       similarity_score : [.90,.52,.35,.20,.70],
       years_of_experience : [.05,.10,.95,.62,.81],
       hovering_color : 'rgba(0,0,0,1)',
-      base_url : "https://bab05e664b9e.ngrok.io/"
+      base_url : "https://rrs-fastapi.herokuapp.com"
     };
   }
 
   componentDidMount() {
-    fetch(this.state.base_url + "resume-names")
+    fetch(this.state.base_url + "/resume-names")
     .then(res => res.json())
     .then(
       (result) => {
@@ -38,7 +38,7 @@ export default class Button extends Component {
       }
     )
 
-    fetch(this.state.base_url + "overall-ranks")
+    fetch(this.state.base_url + "/overall-ranks")
     .then(res => res.json())
     .then(
       (result) => {
@@ -56,7 +56,7 @@ export default class Button extends Component {
       }
     )
 
-    fetch(this.state.base_url + "experience-ranks")
+    fetch(this.state.base_url + "/experience-ranks")
     .then(res => res.json())
     .then(
       (result) => {
@@ -74,7 +74,7 @@ export default class Button extends Component {
       }
     )
 
-    fetch(this.state.base_url + "requirement-matching-scores")
+    fetch(this.state.base_url + "/requirement-matching-scores")
     .then(res => res.json())
     .then(
       (result) => {
