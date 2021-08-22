@@ -78,3 +78,7 @@ https://www.youtube.com/watch?v=GIM5irN4Ix0&t=914s&ab_channel=DylanGonzales
 
 #Online React app builder
 https://codesandbox.io/s/jjpk3o5l3?file=/package.json:440-451
+
+npm install axios
+npm i -g Chokidar
+npm i
